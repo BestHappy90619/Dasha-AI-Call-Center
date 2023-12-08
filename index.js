@@ -1,4 +1,7 @@
 import * as dasha from "@dasha.ai/sdk";
+sandbox.audio.tts = "dasha"
+sandbox.audio.stt = "default"
+sandbox.audio.noiseVolume = 0
 
 const main = async () => {
   const app = await dasha.deploy("./app");
@@ -12,7 +15,7 @@ const main = async () => {
   app.queue.on("ready", async (key, conv) => {
     if (process.sandbox) {
       conv.input.name = "Andrey",
-      conv.input.endpoint = process.sandbox.endpoint
+      conv.input.phone = process.sandbox.endpoint
     }
 
     conv.on("transcription", async (entry) => {

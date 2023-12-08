@@ -3,7 +3,7 @@ import "commonReactions/all.dsl";
 context 
 {
     // declare input variables here. phone must always be declared. name is optional 
-    input endpoint: string;
+    input phone: string;
     input name: string = "Michael"; 
     input email: string = ""; 
     input company: string = "BLAIR INC.";
@@ -21,7 +21,7 @@ start node root
 {
     do //actions executed in this node 
     {
-        #connectSafe($endpoint); // connecting to the phone number which is specified in index.js that it can also be in-terminal text chat
+        #connectSafe($phone); // connecting to the phone number which is specified in index.js that it can also be in-terminal text chat
         #waitForSpeech(1000); // give the person a second to start speaking 
         #sayText("Hello! Thank you for calling me. My name is Blair.");// and greet them
         goto ask_name; // switch state to another node without awaiting any event
