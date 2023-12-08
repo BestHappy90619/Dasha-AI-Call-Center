@@ -48,11 +48,6 @@ if (result.transition == "root") {
 }
 
 
-if (result.transition == "ask_name") {
-  goto ask_name;
-}
-
-
 if (result.transition == "ask_email") {
   goto ask_email;
 }
@@ -105,7 +100,6 @@ if (result.transition == "okay_bye") {
     dont_understand_hangup: goto dont_understand_hangup;
 repeat_or_ping_hangup: goto repeat_or_ping_hangup;
 root: goto root;
-ask_name: goto ask_name;
 ask_email: goto ask_email;
 confirm_receive: goto confirm_receive;
 ask_any_program: goto ask_any_program;

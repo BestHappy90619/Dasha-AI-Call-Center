@@ -2,7 +2,7 @@
   "default": {
     "voiceInfo": {
       "lang": "en-US",
-      "speaker": "default",
+      "speaker": "kate",
       "speed": 1
     },
 
@@ -33,6 +33,15 @@
         ]
       },
 
+      "return_point": {
+        "random": [
+          [{ "text": "Getting back to what we were discussing," }],
+          [{ "text": "Anyway, Regarding what we were talking about earlier," }],
+          [{ "text": "To revert to our initial discussion," }],
+          [{ "text": "Returning to our previous topic," }]
+        ]
+      },
+      
       "when_callback": [{ "text": "When can I call you back?" }],
       "i_will_call_back": [{ "text": "Okay, I'll call you later. Bye!" }],
       "i_will_wait": {

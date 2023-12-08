@@ -21,12 +21,18 @@ In other words, with a single integration, you can create smart conversational a
 
 <div>
   <div>
-    <h3>Primary test</h3>
-    <video src="test/Primary.mp4" width="400">
+    <h4>Primary test</h4>
+    <video width="320" controls>
+      <source src="./test/Primary.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
   <div>
-    <h3>Interruption test</h3>
-    <video src="test/Interruption.mp4" width="400">
+    <h4>Interruption test</h4>
+    <video width="320" controls>
+      <source src="./test/Interruption.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 

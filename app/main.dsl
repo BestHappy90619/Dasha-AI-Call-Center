@@ -6,7 +6,7 @@ context
     input phone: string;
     input name: string = "Michael"; 
     input email: string = ""; 
-    input company: string = "BLAIR INC.";
+    input company: string = "Blair Inc.";
     input date: string = "";
 
     // declare storage variables here 
@@ -22,39 +22,39 @@ start node root
     do //actions executed in this node 
     {
         #connectSafe($phone); // connecting to the phone number which is specified in index.js that it can also be in-terminal text chat
-        #waitForSpeech(1000); // give the person a second to start speaking 
-        #sayText("Hello! Thank you for calling me. My name is Blair.");// and greet them
-        goto ask_name; // switch state to another node without awaiting any event
+        #waitForSpeech(1500); // give the person a second to start speaking 
+        #sayText("Hello! " + $name + ".");// and greet them
+        goto ask_email; // switch state to another node without awaiting any event
 
     }
     transitions // specifies to which node the conversation goes from here AND on which condition 
     {
-        ask_name: goto ask_name;
+        ask_email: goto ask_email;
     }
 }
 
-node ask_name {
-    do {
-        #sayText("Can you please introduce yourself? May I have your name?");
-        wait*; // instruct Dasha to wait for a user response
-    }
-    transitions // specifies to which node the conversation goes from here AND on which condition 
-    {
-        ask_email: goto ask_email on #messageHasData("name"); 
-        // when Dasha identifies that the user's phrase contains "name" data, as specified in the named entities section of data.json, 
-        // a transfer to node how_can_help happens 
-    }
-    // this section allows you to perform some additional work when exiting the current node
-    // more details here: https://docs.dasha.ai/en-us/default/dasha-script-language/control-flow#onexit
-    onexit 
-    {
-        default: do {
-            //assign the variable $name with the value extracted from the user's previous statement 
-            set $name = #messageGetData("name")[0]?.value??""; 
-            #log($name);
-        }
-    }
-}
+// node ask_name {
+//     do {
+//         #sayText("Can you please introduce yourself? May I have your name?");
+//         wait*; // instruct Dasha to wait for a user response
+//     }
+//     transitions // specifies to which node the conversation goes from here AND on which condition
+//     {
+//         ask_email: goto ask_email on #messageHasData("name"); 
+//         // when Dasha identifies that the user's phrase contains "name" data, as specified in the named entities section of data.json, 
+//         // a transfer to node how_can_help happens 
+//     }
+//     // this section allows you to perform some additional work when exiting the current node
+//     // more details here: https://docs.dasha.ai/en-us/default/dasha-script-language/control-flow#onexit
+//     onexit 
+//     {
+//         default: do {
+//             //assign the variable $name with the value extracted from the user's previous statement 
+//             set $name = #messageGetData("name")[0]?.value??""; 
+//             #log($name);
+//         }
+//     }
+// }
 
 // digression policy_check
 // {
@@ -81,7 +81,7 @@ node ask_name {
 
 node ask_email {
     do {
-        #sayText("Yeah," + $name + ", it's Blair calling from " + $company + ". You were looking for business funding a while back and we never got together on the deal.");
+        #sayText("it's Blair calling from " + $company + ". You were looking for business funding a while back and we never got together on the deal.");
         #sayText(" I want to send over our new guidelines so you can see what we’re doing over here. What's your best email?");
         wait*; // instruct Dasha to wait for a user response
     }
@@ -105,7 +105,8 @@ node ask_email {
 
 node confirm_receive {
   do {
-    #sayText("Got it. I'll send that over now, let me know when you get it.");
+    #sayText("Got it. I'll send that over now.");
+    #sayText("Let me know when you get it.");
     wait*;
   }
   transitions {
@@ -126,7 +127,8 @@ node ask_any_program {
 
 node make_connection {
   do {
-    #sayText("Excellent. I can connect you with a fund manager to discuss how much you may qualify for, as well as the up-to-date rates and terms. Do you have a few minutes to chat with them right now?");
+    #sayText("Excellent. I can connect you with a fund manager to discuss how much you may qualify for, as well as the up-to-date rates and terms.");
+    #sayText("Do you have a few minutes to chat with them right now?");
     wait*;
   }
   transitions {
@@ -190,7 +192,8 @@ node check_available {
   do {
     #sayText("One sec.");
     #waitForSpeech(4000);
-    #sayText("Yep, that works for us. I’ve got you scheduled for " + $date + ". I'll call you the day of, just as a reminder.");
+    #sayText("Yep, that works for us.");
+    #sayText("I’ve got you scheduled for " + $date + ". I'll call you the day of, just as a reminder.");
     wait*;
   }
   transitions {
@@ -211,6 +214,7 @@ digression how_are_you
     do 
     {
         #sayText("I'm well, thank you!", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -222,6 +226,7 @@ digression how_much_can_get
     do 
     {
         #sayText("That’s a good question. The funding manager will be able to go through the details and let you know a specific amount you’ll likely qualify for. Do you have a few minutes? I can transfer you over now. ", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -232,6 +237,7 @@ digression what_is_rate
     do 
     {
         #sayText("The rate, as always, is determined by a few different factors like time in business, industry, credit score, and more. A funding manager can get you more specific information that’s tailored to your business. Can you speak with them now?", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -242,6 +248,7 @@ digression what_is_term
     do 
     {
         #sayText("We offer a few different programs that range from short term, like bridge funding for a few months, to long term - like sba funding for five or more years.", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -252,6 +259,7 @@ digression how_much
     do 
     {
         #sayText("That’s really up to you and your business. We offer funding programs as low as $5,000 and some that are up into the millions. Would you like to discuss a real amount that you may qualify for? I can connect you to a funding manager real quick.", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -262,6 +270,7 @@ digression who_are_you
     do 
     {
         #sayText("I’m Blair, from " + $company + " - where small business owners turn for funding.", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -272,6 +281,7 @@ digression how_got_information
     do 
     {
         #sayText("At some point you requested information online. It could have been a while back but our programs are always updating, especially lately - with all the change that’s been going on in the market. ", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -282,6 +292,7 @@ digression not_interest
     do 
     {
         #sayText("No problem. That’s fine. I’ll just shoot over an email with our newest program guidelines so you’ll have all the information you need when the time is right. ", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -292,6 +303,7 @@ digression stop_calling
     do 
     {
         #sayText("Yeah, I hear ya. I will add you to our company dnc list. If anything changes on your end, you’ll let us know, right? Because I won’t be able to call you again, even when we’re running special rates and promo deals. ", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
@@ -302,6 +314,7 @@ digression are_you_bot
     do 
     {
         #sayText("Well, technically, yes I am. I prefer the name Blair though. It stands for Business Loan Artificial Intelligence Representative.", repeatMode: "ignore"); 
+        #say("return_point", repeatMode: "ignore");
         #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node 
         return; // go back to the node from which we got distracted into the digression 
     }
