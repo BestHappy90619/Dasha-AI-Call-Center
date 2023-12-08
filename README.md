@@ -19,9 +19,15 @@ In other words, with a single integration, you can create smart conversational a
 
 <h2 id="preview">Preview</h2>
 
-<div align="center">
-  <video src="test/Primary.mp4" width="200">
-  <video src="test/Interruption.mp4" width="200">
+<div>
+  <div>
+    <h3>Primary test</h3>
+    <video src="test/Primary.mp4" width="400">
+  </div>
+  <div>
+    <h3>Interruption test</h3>
+    <video src="test/Interruption.mp4" width="400">
+  </div>
 </div>
 
 <h2 id="features">Features</h2>
