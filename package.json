@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "@dasha.ai/sdk": "^0.8.6",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "sip.js": "^0.20.0",
+        "uuid": "^8.3.2",
+        "lodash": "4.17.21",
+        "moment": "2.29.3",
+        "openai": "4.0.1",
+        "completions": "2.7.0"
+    },
+    "scripts": {
+        "start": "node ./@dasha/deploy.js"
+    },
+    "main": "./index.js"
+}

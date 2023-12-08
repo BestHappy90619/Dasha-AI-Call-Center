@@ -1,0 +1,60 @@
+{
+  "default": {
+    "voiceInfo": {
+      "lang": "en-US",
+      "speaker": "default",
+      "speed": 1
+    },
+
+    "phrases": {
+      "yes": [{ "text": "Great! And I can hear you too. Bye!" }],
+      "no": [{ "text": "You will excuse me if I find that highly unlikely. After all, you responded to me and I can hear you just fine. Peace out!" }],
+
+      "mhm": [{ "text": "Mgm..." }],
+      "is_that_all": [{ "text": "Is that all?" }],
+      "repeat_question": [{ "text": "Can you repeat the question, please?" }],
+    
+      "i_said": [{ "text": "I was saying" }],
+      "i_can_hear_you": [{ "text": "Yes, I hear you" }],
+      "sorry_wont_call": [{ "text": "Sorry if I bothered you, have a nice day! Bye!" }],
+      "yes_i_am_a_robot": [{"text": "Actually I am an advanced AI. Just don't tell my boss or I'll be out of a job."}],
+
+      "greeting": [{ "text": "Welcome to United Postal Service! How can I help you?"}],
+      "hello": {
+        "random": [
+          [{ "text": "Hello" }], 
+          [{ "text": "Umm, hello?" }], 
+          [{ "text": "Are you there?" }]
+        ]
+      },
+      "which_program": {
+        "random": [
+          [{ "text": "Perfect. Any of those programs line up with what you’re working on right now?" }]
+        ]
+      },
+
+      "when_callback": [{ "text": "When can I call you back?" }],
+      "i_will_call_back": [{ "text": "Okay, I'll call you later. Bye!" }],
+      "i_will_wait": {
+        "random": [
+          [{ "text": "Okay, I'll wait" }], 
+          [{ "text": "Sure, I'll wait" }], 
+          [{ "text": "Okay, no problem!" }]
+        ]
+      },
+
+      "dont_understand_question": [{ "text": "Sorry, i dont understand your question. Can you say it otherwise?" }],
+      "dont_understand_request": [{ "text": "Sorry, i cant do it now. May be some day." }],
+      "dont_understand_hangup": [{"text": "I'm sorry I can barely hear you. I'll try to call you later! Bye!"}],
+      "dont_understand_forward": [{"text": "I'm sorry, let me transfer you to another agent. Please stand by!"}],
+      "dont_understand": {
+        "random": [
+          [{ "text": "Sorry, could you say it again?" }],
+          [{ "text": "Sorry, the connection dropped for a second. Could you say that again?" }],
+          [{ "text": "Sorry, I didn't quite catch that." }],
+          [{ "text": "Could you say it one more time?" }]
+        ]
+      }
+    }
+  }
+}
