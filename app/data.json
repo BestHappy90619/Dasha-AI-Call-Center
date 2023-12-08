@@ -1,0 +1,431 @@
+{
+  "version": "v2",
+  "intents": 
+  {
+    "yes": 
+    {
+      "includes": [
+        "yes",
+        "yes. of course.",
+        "correct",
+        "sure",
+        "absolutely",
+        "yes siree bob",
+        "right",
+        "yep",
+        "you got it",
+        "I would",
+        "yeah",
+        "that's right", 
+        "I would"
+      ]
+    },
+    "no": {
+      "includes": [
+        "no",
+        "definitely not",
+        "wrong",
+        "incorrect",
+        "I do not",
+        "I don't",
+        "I would not",
+        "I wouldn't"
+      ],
+      "excludes": [
+        "no, I want a delivery",
+        "no, I want it delivered"
+      ]
+    },
+    "have_program_yes": {
+      "includes": [
+        "Yes. I have.",
+        "Yes. Of course.",
+        "Yes.",
+        "Yeah. I have a question."
+      ]
+    },
+    "make_connection_yes": {
+      "includes": [
+        "Yes. I have.",
+        "Yes. I am available.",
+        "Yes. I am able to chat now",
+        "Yes. Of course.",
+        "Sure."
+      ]
+    },
+    "make_connection_no": {
+      "includes": [
+        "No. I haven't",
+        "I am not available.",
+        "No. I am not able to chat now",
+        "Can I chat later?",
+        "I don't have time.",
+        "No."
+      ]
+    },
+    "confirm_receive": {
+      "includes": [
+        "Yes. I see it.",
+        "I've received.",
+        "The email has been arrived.",
+        "received the email",
+        "Yes. I can see the email you sent.",
+        "I checked the email.",
+        "I see it.",
+        "Yes."
+      ]
+    },
+    "schedulelink_receive": {
+      "includes": [
+        "Yes. I see it.",
+        "I've received.",
+        "The schedule email has been arrived.",
+        "received the link",
+        "Yes. I can see the email you sent.",
+        "I checked the link.",
+        "I see it.",
+        "Yes."
+      ]
+    },
+    "bye": {
+      "includes": [
+        "bye",
+        "good bye",
+        "thanks bye",
+        "nevermind",
+        "forget about it",
+        "we're done",
+        "take it easy",
+        "peace out boo",
+        "peace"
+      ]
+    },
+    "okay": {
+      "includes": [
+        "okay",
+        "OKAY",
+        "OK",
+        "ok",
+        "Sure.",
+        "No problem",
+        "Sounds good",
+        "Thank you."
+      ]
+    },
+    "how_much_can_get": {
+      "includes": [
+        "How much can I get?"
+      ]
+    },
+    "what_is_rate": {
+      "includes": [
+        "What is the rate?",
+        "How much is the rate?"
+      ]
+    },
+    "what_is_term": {
+      "includes": [
+        "What is the term?"
+      ]
+    },
+    "how_much": {
+      "includes": [
+        "How much?"
+      ]
+    },
+    "who_are_you": {
+      "includes": [
+        "Who are you?",
+        "Who is speaking?"
+      ]
+    },
+    "how_got_information": {
+      "includes": [
+        "How did you get my information?",
+        "Where did you find my information?"
+      ]
+    },
+    "not_interest": {
+      "includes": [
+        "I’m not interested."
+      ]
+    },
+    "stop_calling": {
+      "includes": [
+        "Stop calling."
+      ]
+    },
+    "are_you_bot": {
+      "includes": [
+        "Are you an AI bot?",
+        "Are you an AI?",
+        "Are you an bot?",
+        "Are you an chat bot?"
+      ]
+    }
+  },
+ 
+  "entities": 
+  {
+    "name": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Doctor Smith",
+          "synonyms": [
+            "Doc Smith",
+            "Doctor Smith",
+            "Smith, M.D.",
+            "Smith MD"
+          ]
+        },
+        {
+          "value": "Doctor Philips",
+          "synonyms": [
+            "Doc Philips",
+            "Doctor Philips",
+            "Philips, M.D.",
+            "Philips MD"
+          ]
+        },
+        {
+          "value": "Jim Smith",
+          "synonyms": [
+            "Jim Smith"
+          ]
+        },
+        {
+          "value": "Tony Montana",
+          "synonyms": [
+            "Tony Montana"
+          ]
+        },
+        {
+          "value": "Jill Jones",
+          "synonyms": [
+            "Jill Jones"
+          ]
+        },
+        { "value": "James" },
+        { "value": "Robert" },
+        { "value": "John" },
+        { "value": "Michael" },
+        { "value": "David" },
+        { "value": "William" },
+        { "value": "Richard" },
+        { "value": "Joseph" },
+        { "value": "Thomas" },
+        { "value": "Charles" },
+        { "value": "Christopher" },
+        { "value": "Daniel" },
+        { "value": "Matthew" },
+        { "value": "Anthony" },
+        { "value": "Mark" },
+        { "value": "Mary" },
+        { "value": "Patricia" },
+        { "value": "Jennifer" },
+        { "value": "Linda" },
+        { "value": "Elizabeth" },
+        { "value": "Barbara" },
+        { "value": "Susan" },
+        { "value": "Jessica" },
+        { "value": "Sarah" },
+        { "value": "Karen" },
+        { "value": "Lisa" },
+        { "value": "Nancy" },
+        { "value": "Betty" },
+        { "value": "Margaret" },
+        { "value": "Sandra "}
+      ],
+      "includes": [
+        "My name is (Doctor Smith)[name]",
+        "My name is (Tony Montana)[name]",
+        "My name is (Jill Jones)[name]",
+        "My name is (Jim Smith)[name]",
+        "This is (Doctor Philips)[name]",
+        "This is (Jill Jones)[name]",
+        "This is (Doctor Smith)[name]",
+        "This is (Jim Smith)[name]",
+        "(Doctor Jones)[name] calling",
+        "(Jim Smith)[name] calling",
+        "(Jill Jones)[name] calling",
+        "(Doctor Philips)[name] calling",
+        "I am [name]"
+      ]
+    },
+    "email": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "colleendlgd@gmail.com",
+          "synonyms": [
+            "colleendlgd@gmail.com"
+          ]
+        },
+        {
+          "value": "michael.kornblum224@gmail.com",
+          "synonyms": [
+            "michael.kornblum224@gmail.com"
+          ]
+        },
+        {
+          "value": "jimsmith3535@outlook.com",
+          "synonyms": [
+            "jimsmith3535@outlook.com"
+          ]
+        },
+        {
+          "value": "TonyMontana43@proton.me",
+          "synonyms": [
+            "TonyMontana@proton.me"
+          ]
+        },
+        { "value": "dames.aurr@gmail.com" },
+        { "value": "dapper_dave@smoothmails.com" },
+        { "value": "nifty_nina@quickmails.net" },
+        { "value": "beautiful_betty@rosymails.org" },
+        { "value": "galactic_george@skiff.com" },
+        { "value": "flippy_fiona@flipside.com" },
+        { "value": "echo_ellie@soundwaves.net" },
+        { "value": "river_raider@proton.me" },
+        { "value": "ace_amy@cardmails.com" },
+        { "value": "classic_chris@typewriter.net" },
+        { "value": "freestyle_freddy@gmail.com" },
+        { "value": "victory_vincent@champmails.org" }
+      ],
+      "includes": [
+        "My email is (jimsmith3535@outlook.com)[email]",
+        "My email address is (dames.aurr@gmail.com)[email]",
+        "Email is (freestyle_freddy@gmail.com)[email]",
+        "Email address is (hunterbaker427@gmail.com)[email]",
+        "Address is (dames.aurr@gmail.com)[email]",
+        "email address is (cool.communication.1993@outlook.com)[email]",
+        "Email: (filipmazurek@skiff.com)[email]",
+        "My email: (ace_amy@cardmails.com)[email]",
+        "(river_raider@proton.me)[email]",
+        "(galactic_george@skiff.com)[email]"
+      ]
+    },
+    "schedule_date": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Monday at 3 am",
+          "synonyms": [
+            "Monday at 3:00 am",
+            "on Monday at 3:00 am",
+            "at 3:00 am on Monday",
+            "monday at 3:00"
+          ]
+        },
+        {
+          "value": "thursday at 4 pm",
+          "synonyms": [
+            "Thursday at 16:00",
+            "on Thursday at 4 pm",
+            "at 4 pm on Thursday",
+            "thursday at 16:00"
+          ]
+        },
+        {
+          "value": "4 am on Saturday",
+          "synonyms": [
+            "4 am on Saturday",
+            "Saturday at 4 am",
+            "at 4 am on Saturday",
+            "saturday at 4:00"
+          ]
+        },
+        {
+          "value": "Wednesday at 6 am",
+          "synonyms": [
+            "at 6 am on Wednesday",
+            "on Wednesday at 6 am ",
+            "at 6:00  on wednesday",
+            "Wednesday at 6:00"
+          ]
+        },
+        { "value": "Monday 6 am" },
+        { "value": "Tuesday 3 pm" },
+        { "value": "Wednesday at 3 pm" },
+        { "value": "Thursday at 8 am" },
+        { "value": "Friday at 2 am" },
+        { "value": "Saturday at 7 pm" },
+        { "value": "Sunday at 6 am" },
+        { "value": "5 am on Monday" },
+        { "value": "5 pm on Tuesday" },
+        { "value": "2 am on Wednesday" },
+        { "value": "7 pm on Thursday" },
+        { "value": "1 am on Saturday" },
+        { "value": "Monday 2 pm" },
+        { "value": "Tuesday 6 am" },
+        { "value": "Wednesday at 2 am" },
+        { "value": "Thursday at 9 pm" },
+        { "value": "Friday at 7 pm" },
+        { "value": "Saturday at 7 am" },
+        { "value": "Sunday at 2 pm" },
+        { "value": "1 pm on Monday" },
+        { "value": "2 am on Tuesday" },
+        { "value": "3 pm on Wednesday" },
+        { "value": "4 am on Thursday" },
+        { "value": "5 pm on Saturday" }
+      ],
+      "includes": [
+        "How about (Monday 6 am)[schedule_date]",
+        "Are you available at (1 am on Saturday)[schedule_date]",
+        "The date is (4 pm on Wednesday)[schedule_date]",
+        "I am available at (4 pm on Wednesday)[schedule_date]",
+        "I am able to chat at (4 pm on Wednesday)[schedule_date]",
+        "(4 pm on Wednesday)[schedule_date]."
+      ]
+    },
+    "rating": 
+    {
+      "open_set": false,
+      "values": [
+        {
+          "value": "1",
+          "synonyms": ["1", "one", "zero", "horrible", "worst ever", "the worst", "awful", "horrid", "despicable", "detestable", "very bad"]
+        },
+        {
+          "value": "2",
+          "synonyms": ["2", "two", "bad", "quite bad", "pretty bad", "not good", "crappy"]
+        },
+        {
+          "value": "3",
+          "synonyms": ["3", "three", "alright", "okay", "just okay"]
+        },
+        {
+          "value": "4",
+          "synonyms": ["4", "four", "good", "pretty good", "quite good", "good enough"]
+        },
+        {
+          "value": "5",
+          "synonyms": ["5", "five", "amazing", "incrdible", "just grand", "perfct", "wondrful", "very good"]
+        }
+      ],
+      "includes": [
+        "I would say it was (1)[rating]",
+        "I would say it was (2)[rating]",
+        "I would say it was (3)[rating]",
+        "I would say it was (4)[rating]",
+        "I would say it was (5)[rating]",
+        "(1)[rating]",
+        "(2)[rating]",
+        "(3)[rating]",
+        "(4)[rating]",
+        "(5)[rating]",
+        "I had an (1)[rating] experience",
+        "I had an (2)[rating] experience",
+        "I had an (3)[rating] experience",
+        "I had an (4)[rating] experience",
+        "I had an (5)[rating] experience",
+        "I'll give you a (1)[rating]",
+        "I'll give you a (2)[rating]",
+        "I'll give you a (3)[rating]",
+        "I'll give you a (4)[rating]",
+        "I'll give you a (5)[rating]"
+      ]
+    }
+  }
+}
